@@ -1,0 +1,29 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #252316;
+	color: #000;
+}
+
+img {
+	height: 250px;
+	width: auto;
+}
+
+td img {
+	height: 150px;
+}
+
+.precio {
+	font-weight: bold;
+	font-size: x-large;
+}
+
+ul, li {
+	list-style: none;
+	margin-left: 0;
+	padding: 0;
+}
+
+.dropdown:hover>.dropdown-menu {
+	display: block;
+   }

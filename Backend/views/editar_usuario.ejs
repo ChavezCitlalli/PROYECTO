@@ -1,0 +1,72 @@
+<%-include ("cabecera/cabecera" ,{tituloWeb: 'Editar usuarios'} )%>
+
+
+
+  <h3 class="p-3 text-center"> Editar usuarios</h3>
+
+  <div class="container mt-4">
+    <div class="p-2"></div>
+    <div class="card border-secondary">
+      
+      <div class="card-body">
+
+          <!-- referencia a ruta guardar creacion de usuario se hace un POST-->
+        <form id="nuevoForm" method="POST" class="row g-3 needs-validation">
+          
+          <div class="col-md-4 position-relative">
+            <label for="usuario_nombres" class="form-label">Nombres</label>
+            <input type="text" class="form-control is-valid" value="<%= result.nombres %>" id="usuario_nombres" name="usuario_nombres" tabindex="1" required>
+            <div class="invalid-tooltip">Ingresa tus nombres </div>
+          </div>
+
+          <div class="col-md-4 position-relative">
+            <label for="usuario_apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control is-valid" value="<%= result.apellidos %>"id="usuario_apellidos" name="usuario_apellidos" tabindex="2" required>
+            <div class="invalid-tooltip">Ingresa tus apellidos </div>
+          </div>
+
+          <div class="col-md-4 position-relative">
+            <label for="usuario_email" class="form-label">Email</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="arroba">@</span>
+              <input type="email" class="form-control is-valid" value="<%= result.email %>" id="usuario_email" aria-describedby="validationTooltipUsernamePrepend" name="usuario_email" tabindex="3" required>
+              <div class="invalid-tooltip">Elija un nombre de usuario unico y valido</div>
+            </div>
+          </div>
+
+         
+          
+          <div class="col-md-4 position-relative">
+            <label for="usuario_pass" class="form-label">Contraseña</label>
+            <input type="password" class="form-control is-valid" value="<%= result.pass %>" id="usuario_pass" name="usuario_pass" tabindex="4" required />
+          </div>
+        </div>
+        
+
+          <div class="col-md-4">
+            <label for="tipo_usuario" class="form-label">Clase</label>
+            <select value="<%= result.tipo_usuario %>"id="tipo_usuario" name="tipo_usuario" class="form-select is-valid" tabindex="5">
+              <option >Administrador</option>
+              <option >Usuario</option>
+            </select>
+          </div>
+
+          <div class="col-md-4 position-relative">
+            <label for="usuario_fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control"  id="usuario_fecha" value="<%= result.fecha_creacion %>" name="usuario_fecha" tabindex="6" required>
+            
+          </div>
+  
+            <button type="submit" class="btn btn-dark col-md-6" tabindex="7">Guardar</button>
+            <a href="/usuarios" class="btn btn-secondary col-md-6">Cancelar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/editar_usuario.js"></script>
+
+    
+    <%-include ("cabecera/footer"  )%>
+ 
+

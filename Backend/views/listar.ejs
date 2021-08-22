@@ -1,0 +1,71 @@
+  
+<%-include ("cabecera/cabecera" ,{tituloWeb: 'Lista de productos'} )%>
+
+ 
+
+    <h3 class="p-3 text-center">Registro de productos</h3>
+
+  <div class="container">
+    <div class="p-2">
+      <a href="/index" class="btn btn-outline-primary">Regresar</a>
+    </div>
+    <!-- referencia a ruta create-->
+    <div class="d-flex flex-row-reverse">
+      <a href="/agregar" class="btn btn-outline-primary mt-4"><i class='bx bxs-plus-circle bx-md'></i></a>
+    </div>
+    
+    
+    <table class="table table table-hover  table-bordered  text-center " style="background-color: #fff8f8" >
+      <thead>
+        <tr class=" text-black">
+          <th scope="col">Id</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Inventario</th>
+          <th scope="col">Categoría</th>
+          <th scope="col">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- foreach para recibir resultados de la tabla usuarios -->
+        <% results[0].forEach((tienda) => {
+
+         %>
+          <tr>
+            <td>
+              <%= tienda.producto_id %>
+            </td>
+            <td>
+              <%= tienda.titulo %>
+            </td>
+            <td>
+                <%= tienda.precio %>
+            </td>
+            <td>
+              <img width="100" src="<%= tienda.imagen %>">
+            </td>
+            <td>
+                <%= tienda.inventario %>
+              </td>
+              <td>
+                <%= tienda.categoria %>
+              </td>
+            <!-- referencia a ruta editar y eliminar usuario-->
+            
+            <td>
+              <a href="/producto/<%= tienda.producto_id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i></a>
+              <a onclick="eliminar('<%= tienda.producto_id %>')" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'></i></a>
+          </td>
+
+          </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/listar.js"></script>
+
+  <%-include ("cabecera/footer"  )%>

@@ -1,0 +1,59 @@
+<%-include ("cabecera/cabecera" ,{tituloWeb: 'Agregar productos'} )%>
+
+<!-- formulario de bootstrap -->
+
+    <h1 class="p-3 text-center">Agregar Producto</h1>
+
+    <div class="container mt-4">
+
+      <div class="card border-secondary">
+        <div class="card-header">Nuevo Producto</div>
+        <div class="card-body">
+          
+          <!-- referencia a ruta guardar creacion de usuario se hace un POST-->
+          <form id="nuevoForm" method="POST">
+            <div class="mb-3">
+              <label for="producto_name" class="form-label">Nombre del Producto</label>
+              <input required type="text" class="form-control" id="producto_name" name="producto_name" tabindex="1"/>
+            </div>
+
+            <div class="mb-3">
+                <label for="producto_precio" class="form-label">Precio</label>
+                <input required type="number" step="any" class="form-control" id="producto_precio" name="producto_precio" tabindex="2"/>
+            </div>
+
+            <div class="mb-3">
+                <label for="producto_imagen" class="form-label">URL Imagen</label>
+                <input required type="text" class="form-control" id="producto_imagen" name="producto_imagen" tabindex="3"/>
+            </div>
+
+            
+            <div class="mb-3">
+              <label for="categoria" class="form-label">Categoria</label>
+              <input required type="text"  class="form-control" id="categoria" name="categoria" tabindex="4"/>
+          </div>
+
+            <div class="mb-3">
+                <label for="producto_cantidad" class="form-label">Cantidad</label>
+                <input required type="number" min="1" class="form-control" id="producto_cantidad" name="producto_cantidad" tabindex="5"/>
+            </div>
+
+            <div class="mb-3">
+              <label for="producto_descripcion" class="form-label">Descripcion</label>
+              <input required type="text"  class="form-control" id="producto_descripcion" name="producto_descripcion" tabindex="6"/>
+          </div>
+
+            <button type="submit" class="btn btn-primary" tabindex="7">
+              Guardar
+            </button>
+            <a href="/productos" class="btn btn-secondary">Cancelar</a>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/guardarProducto.js"></script>
+    
+    <%-include ("cabecera/footer"  )%>
+>

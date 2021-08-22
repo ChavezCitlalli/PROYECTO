@@ -1,0 +1,61 @@
+<%-include ("cabecera/cabecera" ,{tituloWeb: 'Registro de usuarios'} )%>
+
+
+
+  <h3 class="p-3 text-center "> Registro de usuarios</h3>
+
+  <div class="container ">
+    <div class="p-2 d-flex">
+      <a href="/index" class="btn btn-outline-black">Regresar</a>
+    </div>
+    <div class="d-flex flex-row-reverse">
+      <a href="/createAdmin" class="btn btn-outline-black mt-4"><i class='bx bxs-plus-circle bx-md'></i></a>
+    </div>
+    <table class="table table table-hover  table-bordered  text-center " style="background-color: #cecece" >
+      <thead>
+        <tr class="text-black">
+          <th scope="col">ID</th>
+          <th scope="col">NOMBRES</th>
+          <th scope="col">APELLIDOS</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">TIPO DE USUARIO</th>
+          <th scope="col">FECHA </th>
+          <th scope="col"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach((user)=>{ %>
+          <tr>
+            <td>
+              <%= user.id_usuarios %>
+            </td>
+            <td>
+              <%= user.nombres %>
+            </td>
+            <td>
+              <%= user.apellidos %>
+            </td>
+            <td>
+              <%= user.email %>
+            </td>
+            <td>
+              <%= user.tipo_usuario %>
+            </td>
+            <td>
+              <%= user.fecha_creacion %>
+              </td>
+            <td>
+              <a href="/edita/<%= user.id_usuarios%>" class="btn btn-outline-success"  ><i class='bx bxs-edit'></i></a>
+              <a onclick= "eliminar('<%= user.id_usuarios %>')" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'></i></a>            
+            </td>
+          </tr>
+          <% }) %>
+
+
+      </tbody>
+    </table>
+  </div>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/eliminar_usuario.js"></script>
+ 
+  <%-include ("cabecera/footer"  )%>

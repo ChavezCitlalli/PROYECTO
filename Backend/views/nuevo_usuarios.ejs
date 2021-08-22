@@ -1,0 +1,64 @@
+<%-include ("cabecera/cabecera" ,{tituloWeb: 'Registro'} )%>
+
+
+  <h3 class="p-3 text-center">Nuevo usuario</h3>
+  <div class="container mt-4">
+    <div class="p-2"></div>
+    <div class="card border-secondary">
+      
+      <div class="card-body">
+
+        <!-- referencia a ruta guardar creacion de usuario se hace un POST-->
+        <form id="nuevoForm" method="POST" class="row g-3 needs-validation">
+          
+          <div class="col-md-4 position-relative">
+            <label for="usuario_nombres" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="usuario_nombres" name="usuario_nombres" tabindex="1" required>
+            
+          </div>
+
+          <div class="col-md-4 position-relative">
+            <label for="usuario_apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="usuario_apellidos" name="usuario_apellidos" tabindex="2" required>
+           
+          </div>
+
+          <div class="col-md-4 position-relative">
+            <label for="usuario_email" class="form-label">Email</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="arroba">@</span>
+              <input type="email" class="form-control" id="usuario_email" aria-describedby="validationTooltipUsernamePrepend" name="usuario_email" tabindex="3" required>
+              <div class="invalid-tooltip">Elija un nombre de usuario unico y valido</div>
+            </div>
+          </div>
+
+         
+          
+          <div class="col-md-4 position-relative">
+            <label for="usuario_pass" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="usuario_pass" name="usuario_pass" tabindex="5" required />
+          </div>
+
+          <div class="col-md-4">
+            <label for="tipo_usuario" class="form-label">Rol</label>
+            <select required id="tipo_usuario" name="tipo_usuario" class="form-select is-valid" aria-label="Default select example" tabindex="6">
+              <option > Administrador</option>
+              <option >Usuario</option>
+            </select>
+          </div>
+          <div class="col-md-4 position-relative">
+            <label for="usuario_fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="usuario_fecha" name="usuario_fecha" tabindex="7" required>
+            
+          </div>
+
+          <button type="submit" class="btn btn-dark col-md-6" tabindex="7">Guardar</button>
+          <a href="/usuarios" class="btn btn-secondary col-md-6">Cancelar</a>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="js/crear_usuario.js"></script>
+  <%-include ("cabecera/footer"  )%>
