@@ -22,6 +22,6 @@ DB_PASS =
 
 SECRET_KEY = 
 
-Instalar nmp i / seguido de levantar el servidor (nodemon)
+Instalar npm i / seguido de levantar el servidor (nodemon)
 
 la pagina de la tieda principal es : http://127.0.0.1:5500/Frontend/IndexPublic.html
