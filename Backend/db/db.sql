@@ -1,5 +1,5 @@
-CREATE DATABASE dataPrueba;
-USE dataPrueba;
+CREATE DATABASE Tienda;
+USE Tienda;
 GO
 CREATE TABLE usuarios (
     id_usuarios INT IDENTITY (1,1) NOT NULL,
